@@ -1,0 +1,6 @@
+name: Man10MiniGamePoints
+version: ${project.version}
+main: yoneyone.yone.yo.man10minigamepoints.Man10MiniGamePoints
+commands:
+  mgscore:
+    description: ミニゲームポイントメインコマンド
