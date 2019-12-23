@@ -264,6 +264,7 @@ public class MySQLManager {
             this.MySQL.close(this.con);
 
         } catch (SQLException var4) {
+        }catch (NullPointerException ignored){
         }
 
     }

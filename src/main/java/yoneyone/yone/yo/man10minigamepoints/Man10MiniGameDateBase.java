@@ -35,6 +35,10 @@ public class Man10MiniGameDateBase {
                 sender.sendMessage("§4An error has occurred");
                 SQL.close();
                 return;
+            }catch (NullPointerException e){
+                sender.sendMessage("§4§lデータベースに接続できませんでした！！！");
+                SQL.close();
+                return;
             }
             if (gameID == -1){//見つからなければ-1
                 sender.sendMessage("§4The game doesn't exist");
@@ -68,6 +72,10 @@ public class Man10MiniGameDateBase {
                 SQL.execute("UPDATE user_score SET player = '"+ player.getName() +"', score = "+ newUserScore +" WHERE uuid = '"+ player.getUniqueId().toString() +"';");
             } catch (SQLException e) {
                 sender.sendMessage("§4An error has occurred");
+                SQL.close();
+                return;
+            }catch (NullPointerException e){
+                sender.sendMessage("§4§lデータベースに接続できませんでした！！！");
                 SQL.close();
                 return;
             }
@@ -108,6 +116,10 @@ public class Man10MiniGameDateBase {
                 }
             } catch (SQLException e) {
                 player.sendMessage("§4An error has occurred");
+                SQL.close();
+                return;
+            }catch (NullPointerException e){
+                player.sendMessage("§4§lデータベースに接続できませんでした！！！");
                 SQL.close();
                 return;
             }
@@ -158,6 +170,10 @@ public class Man10MiniGameDateBase {
                 player.sendMessage("§4An error has occurred");
                 SQL.close();
                 return;
+            }catch (NullPointerException e){
+                player.sendMessage("§4§lデータベースに接続できませんでした！！！");
+                SQL.close();
+                return;
             }
             SQL.close();
         });
@@ -174,6 +190,8 @@ public class Man10MiniGameDateBase {
             player.sendMessage("§e"+ gameName +":"+ date.getInt("score"));
         }catch (SQLException e){
             player.sendMessage("§4An error has occurred");
+        }catch (NullPointerException e){
+            player.sendMessage("§4§lデータベースに接続できませんでした！！！");
         }
         SQL.close();
     }
@@ -270,7 +288,7 @@ public class Man10MiniGameDateBase {
                 game.name = date.getString("name");
                 Man10MiniGameDates.games.add(game);
             }
-        }catch (SQLException e){
+        }catch (SQLException | NullPointerException e){
             Bukkit.getLogger().info("ゲーム一覧のデータ読み込みに失敗しました");
         }
         SQL.close();
@@ -288,7 +306,7 @@ public class Man10MiniGameDateBase {
                 exchange.game_key = date.getString("game_key");
                 Man10MiniGameDates.items.add(exchange);
             }
-        }catch (SQLException e){
+        }catch (SQLException | NullPointerException e){
             Bukkit.getLogger().info("アイテム一覧のデータ読み込みに失敗しました");
         }
         SQL.close();
