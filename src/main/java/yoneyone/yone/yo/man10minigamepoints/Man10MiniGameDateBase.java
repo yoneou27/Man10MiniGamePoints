@@ -333,3 +333,15 @@ public class Man10MiniGameDateBase {
         }
     }
 }
+class game_index {
+    int id;
+    String name;
+    String key;
+}
+class exchange_items {
+    int id;
+    String item;
+    String name;
+    int point;
+    String game_key;
+}
