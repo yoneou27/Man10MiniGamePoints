@@ -13,6 +13,7 @@ public final class Man10MiniGamePoints extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        saveDefaultConfig();
         getServer().getPluginManager().registerEvents(new Man10MiniGameGUI(this),this);
         isOpenExchange = getConfig().getBoolean("openexchange");
         Man10MiniGameDateBase dateBase = new Man10MiniGameDateBase(this);
