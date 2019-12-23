@@ -13,6 +13,8 @@ import java.util.logging.Level;
  * Created by takatronix on 2017/03/05.
  */
 
+// test commmit by takatronix
+
 
 public class MySQLManager {
 
