@@ -68,7 +68,7 @@ public class MySQLManager {
                 "ENGINE=InnoDB\n" +
                 "AUTO_INCREMENT=1\n" +
                 ";\n");
-        execute("CREATE TABLE　if not exists `exchange_items` (\n" +
+        execute("CREATE TABLE if not exists `exchange_items` (\n" +
                 "\t`id` INT(11) NOT NULL AUTO_INCREMENT,\n" +
                 "\t`item` TEXT NOT NULL,\n" +
                 "\t`name` VARCHAR(50) NOT NULL,\n" +
